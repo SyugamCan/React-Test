@@ -1,0 +1,14 @@
+.container {
+  margin: auto;
+  padding-bottom: 10px;
+  width: 560px;
+  border: red solid 1px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+h2 {
+  width: 360px;
+  text-align: center;
+}
