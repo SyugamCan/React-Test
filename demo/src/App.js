@@ -1,9 +1,13 @@
-import MyTodo from "./component/TodoList/MyTodos";
+// import Example01 from './component/Example01/Example01'
+// import Demo from './component/Example02/Demo'
+import MyTodoList from './component/Example03/TodoList/MyTodos'
 
 function App() {
   return (
     <>
-      <MyTodo />
+      {/* <Example01/> */}
+      {/* <Demo /> */}
+      <MyTodoList />
     </>
   );
 }
