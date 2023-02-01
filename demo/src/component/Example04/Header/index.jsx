@@ -13,21 +13,17 @@ export default function Header(props) {
     // account[0]是账户名（string）
     if(account[0]) {
       let acc = account[0]
-      let balance = ethers.utils.formatEther(await provider.getBalance(acc))
+      // balance 单位： wei
+      let balance = await provider.getBalance(acc)
+      // 单位： ETH
+      let balance_in_ether = ethers.utils.formatEther(balance)
       let net = await provider.getNetwork()
       console.log(net);
-      let netName = ''
-      if(net.chainId === 1) {
-        netName = 'EthereumMainnet'
-      } else if(net.chainId === 56) {
-        netName = 'BNB Smart Chain'
-      } else {
-        netName = 'yyy'
-      }
+      let netName = net.name
       const accfront = acc.slice(0,6)
       const accbehind = acc.slice(-4)
       const accname = `${accfront}...${accbehind}`
-      changeMyState(accname, netName, balance)
+      changeMyState(accname, netName, balance_in_ether)
     }
   }
   return (

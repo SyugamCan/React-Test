@@ -8,7 +8,7 @@ export default function Right(props) {
     <div id='right'>
       <h2>账户：{account}</h2>
       <h2>网络：{network}</h2>
-      <h2>余额：{money} ETH</h2>
+      <h2>余额：{money} </h2>
     </div>
   )
 }
