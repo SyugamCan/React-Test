@@ -39,7 +39,7 @@ const Header = props => {
   const getUSDT = async () => {
     const theContract = new ethers.Contract(contractAddress, usdtABI, provider)
     try {
-      let myUSDT = theContract.balanceOf(acc)
+      let myUSDT = await theContract.balanceOf(acc)
       console.log(myUSDT)
     } catch(error) {
       console.log(error);
