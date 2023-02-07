@@ -45,6 +45,7 @@ const Header = props => {
       console.log(error);
     }
   }
+
   return (
     <nav>
       <ul>
@@ -54,7 +55,7 @@ const Header = props => {
         <li>
           <button onClick={getUSDT}>查看USDT余额</button>
         </li>
-        <li>yyy</li>
+        <li>点击存款</li>
         <li>zzz</li>
         <li>www</li>
       </ul>
