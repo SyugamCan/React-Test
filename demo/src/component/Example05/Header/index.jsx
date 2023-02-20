@@ -52,8 +52,9 @@ const Header = props => {
   const allowanceUSDT = async () => {
     const testContract = new ethers.Contract(usdtContractAddress, usdtABI, provider)
     try {
-      let myShouQuan = await testContract.connect(signer).approve(account[0], testContractAddress)
-      console.log('查询成功', myShouQuan);
+      let myShouQuan = await testContract.connect(signer).allowance(account[0], testContractAddress)
+      let usdt = ethers.utils.formatEther(myShouQuan)
+      console.log('查询成功,授权usdt数目: ', usdt);
     } catch(error) {
       console.log('查询失败', error);
     }
@@ -63,7 +64,18 @@ const Header = props => {
     const testContract = new ethers.Contract(testContractAddress, testABI, provider)
     try {
       let s = await testContract.connect(signer).deposit('10000000000000000000', refAddress)
-      console.log('成功');
+      console.log('成功', s);
+    } catch(error) {
+      console.log('失败', error);
+    }
+  }
+  // （6）读取合约存款余额
+  const getDepositBal = async () => {
+    const testContract = new ethers.Contract(testContractAddress, testABI, provider)
+    try {
+      let depositBal = await testContract.connect(signer).depositBal(account[0])
+      depositBal = ethers.utils.formatEther(depositBal)
+      console.log('存款余额: ', depositBal);
     } catch(error) {
       console.log('失败', error);
     }
@@ -85,6 +97,9 @@ const Header = props => {
         </li>
         <li>
           <button onClick={deposit}>存款(10usdt)</button>
+        </li>
+        <li>
+          <button onClick={getDepositBal}>读取存款</button>
         </li>
       </ul>
     </nav>
