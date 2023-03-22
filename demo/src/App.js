@@ -5,7 +5,8 @@
 // import Demo from './component/Example02/Demo'
 // import MyTodoList from './component/Example03/TodoList/MyTodos'
 // import MyTest from "./component/Example04/MyTest";
-import MyTest from './component/Example05/MyTest'
+// import MyTest from './component/Example05/MyTest'
+import MyTest from "./component/Example06/MyTest";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       {/* <Index /> */}
       {/* <Demo /> */}
       {/* <MyTodoList /> */}
+      {/* <MyTest /> */}
       {/* <MyTest /> */}
       <MyTest />
     </>
